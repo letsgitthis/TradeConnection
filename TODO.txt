@@ -1,0 +1,3 @@
+Create a pop out for post creating
+Mirror layout of Google Bookstore assignment
+Replace Firebase with custom Passport/Bcrypt login with Email verification
