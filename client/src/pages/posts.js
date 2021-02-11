@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import Footer from '../components/Footer/';
+import Footer from '../components/Footer';
 
 function Posts() {
   // Setting our component's initial state
@@ -80,6 +80,7 @@ function Posts() {
               overflow: 'hidden',            }}>
             </div>
 
+            {/* get rid of this vvv */}
             <div style={{ textAlign: "center" }}>
               <h1>Make a Post Below!</h1>
               <p>To post an image, upload it to <a href="https://postimages.org/" target="_blank" rel="noopener noreferrer">
@@ -132,7 +133,7 @@ function Posts() {
                       style={{
                         height: "250px",
                         width: "550px",
-                        backgroundColor: "black",
+                        backgroundColor: "white",
                         color: "darkorange"
                       }}
 

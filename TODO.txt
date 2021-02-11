@@ -1,3 +1,19 @@
-Create a pop out for post creating
-Mirror layout of Google Bookstore assignment
-Replace Firebase with custom Passport/Bcrypt login with Email verification
+TODO:
+
+Do First:
+
+-Fix styling (move components to where components belong)
+
+-Make item input field a component and have it appear when button is selected.
+
+-Replace image uploader that actually uploads images.
+
+-Correct login routing (refresh sens to you blank login page)
+
+Do Later:
+
+-Create a pop out for post creating.
+
+-Mirror layout of Google Bookstore assignment.
+
+-Replace Firebase with custom Passport/Bcrypt login with Email verification.
