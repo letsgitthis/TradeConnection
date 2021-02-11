@@ -137,27 +137,6 @@ function MediaUpload() {
                     </FormBtn>
 
               </form>
-
-              <h1>Current Posts</h1>
-              {posts.length ? (
-                <List>
-                  {posts.map(post => (
-                    <ListItem key={post._id}>
-                      <Link to={"/posts/" + post._id}>
-                        <strong>
-                          {post.title}
-                          {/* by {post.username} */}
-                          {/* <br></br>
-                          {post.content} */}
-                        </strong>
-                      </Link>
-                      <DeleteBtn onClick={() => deletePost(post._id)} />
-                    </ListItem>
-                  ))}
-                </List>
-              ) : (
-                  <h3>No Results to Display</h3>
-                )}
           </React.Fragment>
   );
 }
