@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API";
+// vvv components should not call other components, fix this.
+import { Input, TextArea, FormBtn } from "../Form";
+import DeleteBtn from "../DeleteBtn";
+import { List, ListItem } from "../List";
+// vvv 
+import API from "../../utils/API";
 import { Link } from "react-router-dom";
-// vvv components
-import DeleteBtn from "../components/DeleteBtn";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import Footer from '../components/Footer';
-import MediaUpload from '../components/MediaUpload'
-// vvv styling
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 
-function Posts() {
+function MediaUpload() {
   // Setting our component's initial state
   const [posts, setPosts] = useState([])
   const [formObject, setFormObject] = useState({})
@@ -67,18 +60,7 @@ function Posts() {
 
 
   return (
-    <div className="masterDiv">
-
-    <div className="mediaUpload">
-      <MediaUpload />
-    </div>
-
-    <div className="oldStuff">
-    <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '40vh' }}>
-      <Grid item md={12}>
-        <Box bgcolor="info.main" >
           <React.Fragment>
-            <CssBaseline />
 
             <div style={{
               textAlign: "center",
@@ -96,11 +78,7 @@ function Posts() {
                 PostImages</a>, and paste the Direct link below.</p>
             </div>
 
-            <Container maxWidth="sm" >
-
               <form>
-                <Grid item lg={12} md={6}>
-                  <Box>
 
                     <Input
                       style={{
@@ -109,11 +87,11 @@ function Posts() {
                         backgroundColor: "black",
                         color: "darkorange"
                       }}
-                      
+
                       onChange={handleInputChange}
                       name="title"
                       placeholder="Title"
-                      />
+                    />
                     <Input
                       style={{
                         height: "25px",
@@ -121,11 +99,11 @@ function Posts() {
                         backgroundColor: "black",
                         color: "darkorange"
                       }}
-                      
+
                       onChange={handleInputChange}
                       name="username"
                       placeholder="Username"
-                      />
+                    />
                     <Input
                       style={{
                         height: "25px",
@@ -133,11 +111,11 @@ function Posts() {
                         backgroundColor: "black",
                         color: "darkorange"
                       }}
-                      
+
                       onChange={handleInputChange}
                       name="photo"
                       placeholder="Paste an image link here with https://"
-                      />
+                    />
                     <TextArea
                       style={{
                         height: "250px",
@@ -145,25 +123,18 @@ function Posts() {
                         backgroundColor: "white",
                         color: "darkorange"
                       }}
-                      
+
                       onChange={handleInputChange}
                       name="content"
                       placeholder="Type Your Post Here"
-                      />
-                  </Box>
-                </Grid>
+                    />
 
-
-                <Grid item md={12}>
-                  <Box>
                     <FormBtn
                       // Requires: username, title, and photo to post
                       disabled={!(formObject.username && formObject.title && formObject.photo)}
                       onClick={handleFormSubmit} justifyContent="center">
                       Press Here To Post
                     </FormBtn>
-                  </Box>
-                </Grid>
 
               </form>
 
@@ -185,19 +156,10 @@ function Posts() {
                   ))}
                 </List>
               ) : (
-                <h3>No Results to Display</h3>
+                  <h3>No Results to Display</h3>
                 )}
-            </Container>
-
-            <Footer />
           </React.Fragment>
-        </Box>
-      </Grid>
-    </Typography>
-  </div>
-  </div>
   );
 }
 
-
-export default Posts;
+export default MediaUpload;
